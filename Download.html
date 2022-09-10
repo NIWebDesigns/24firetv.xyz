@@ -1,299 +1,135 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Password Protected Page</title>
-    <style>
-        html, body {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        #dialogText {
-            color: white;
-            background-color: #333333;
-        }
-        
-        #dialogWrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: table;
-            background-color: #EEEEEE;
-        }
-        
-        #dialogWrapCell {
-            display: table-cell;
-            text-align: center;
-            vertical-align: middle;
-        }
-        
-        #mainDialog {
-            max-width: 400px;
-            margin: 5px;
-            border: solid #AAAAAA 1px;
-            border-radius: 10px;
-            box-shadow: 3px 3px 5px 3px #AAAAAA;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #FFFFFF;
-            overflow: hidden;
-            text-align: left;
-        }
-        #mainDialog > * {
-            padding: 10px 30px;
-        }
-        #passArea {
-            padding: 20px 30px;
-            background-color: white;
-        }
-        #passArea > * {
-            margin: 5px auto;
-        }
-        #pass {
-            width: 100%;
-            height: 40px;
-            font-size: 30px;
-        }
-        
-        #messageWrapper {
-            float: left;
-            vertical-align: middle;
-            line-height: 30px;
-        }
-        
-        .notifyText {
-            display: none;
-        }
-        
-        #invalidPass {
-            color: red;
-        }
-        
-        #success {
-            color: green;
-        }
-        
-        #submitPass {
-            font-size: 20px;
-            border-radius: 5px;
-            background-color: #E7E7E7;
-            border: solid gray 1px;
-            float: right;
-            cursor: pointer;
-        }
-        #contentFrame {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        #attribution {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 0.8em;
-        }
-        #attribution, #attribution a {
-            color: #999;
-        }
-        .error {
-            display: none;
-            color: red;
-        }
-    </style>
-  </head>
-  <body>
-    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
-    <div id="dialogWrap">
-        <div id="dialogWrapCell">
-            <div id="mainDialog">
-                <div id="dialogText">This page is password protected.</div>
-                <div id="passArea">
-                    <p id="passwordPrompt">Password</p>
-                    <input id="pass" type="password" name="pass" autofocus>
-                    <div>
-                        <span id="messageWrapper">
-                            <span id="invalidPass" class="error">Sorry, please try again.</span>
-                            <span id="trycatcherror" class="error">Sorry, something went wrong.</span>
-                            <span id="success" class="notifyText">Success!</span>
-                            &nbsp;
-                        </span>
-                        <button id="submitPass" type="button">Submit</button>
-                        <div style="clear: both;"></div>
-                    </div>
-                </div>
-                <div id="securecontext" class="error">
-                    <p>
-                        Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
-                    </p>
-                </div>
-                <div id="nocrypto" class="error">
-                    <p>
-                        Your web browser appears to be outdated. Please visit this page using a modern browser.
-                    </p>
-                </div>
+<!DOCTYPE html>
+<html  >
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image:src" content="">
+  <meta property="og:image" content="">
+  <meta name="twitter:title" content="Download">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/ori-3680159-2om3foaygncgg97i3evjkpb4cmao2t5w48ufqsd0-fire-skull-esport-mascot-logo-design-128x144.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>Download</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/parallax/jarallax.css">
+      <link rel="stylesheet" href="assets/popup-overlay-plugin/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  
+  
+  
+<meta name="theme-color" content="#ffe161">
+<link rel="manifest" href="manifest.json">
+<script src="sw-connect.js"></script>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/images/apple-launch-640x1136.png">
+<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/images/apple-launch-750x1334.png">
+<link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/images/apple-launch-1242x2208.png">
+<link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/images/apple-launch-1125x2436.png">
+<link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/images/apple-launch-1536x2048.png">
+<link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/images/apple-launch-1668x2224.png">
+<link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/images/apple-launch-2048x2732.png">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="TV.Bannedapps.uk">
+<link rel="apple-touch-icon" href="apple-touch-icon.png"></head>
+<body>
+  
+  <section data-bs-version="5.1" class="content1 cid-tdcAOrDgdv mbr-parallax-background" id="content1-7">
+    
+    <div class="mbr-overlay" style="opacity: 0; background-color: rgb(255, 255, 255);">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-md-12 col-lg-12">
+                <h3 class="mbr-section-title mbr-fonts-style align-center display-5"><strong>Android</strong></h3>
+                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mt-3 display-7">Step One: Download and Install it.
+<div>Step Two: Open and login</div></h4>
+                <div class="mbr-section-btn align-center mt-4"><a class="btn btn-secondary me-4 ms-0 display-4" href="https://bit.ly/perfectmedia1">PerfectXC</a>  <a class="btn btn-secondary me-4 ms-0 display-4" href="https://bit.ly/fhdsmarters1">FHD Smarters</a></div>
             </div>
         </div>
     </div>
-    <div id="attribution">
-        Protected by <a href="https://www.maxlaumeister.com/pagecrypt/">PageCrypt</a>
+</section>
+
+<section data-bs-version="5.1" class="content1 cid-tdcANU46AB mbr-parallax-background" id="content1-6">
+    
+    <div class="mbr-overlay" style="opacity: 0; background-color: rgb(255, 255, 255);">
     </div>
-    <script>
-    (function() {
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-md-12 col-lg-12">
+                <h3 class="mbr-section-title mbr-fonts-style align-center display-5"><strong>iPhone</strong></h3>
+                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mt-3 display-7">Step One: Download and Install it.<br>Step Two: Open tap on login with code option (at bottom)<div><span style="font-size: 1.2rem;">Code: LNCB7T</span><br></div><div>Step Three:&nbsp;<span style="font-size: 1.2rem;">Select server "IOS PLAYER"</span></div><div>
+</div><div>
+</div><div>
+</div><div>
+</div><div>
+</div><div>
+</div><div>
+</div><div>
+</div></h4>
+                <div class="mbr-section-btn align-center mt-4"><a class="btn btn-secondary me-4 ms-0 display-4" href="https://apps.apple.com/gb/app/purple-playlist-player/id1547219704">Purple Playlist Player</a> <a class="btn btn-secondary me-4 ms-0 display-4" href="https://apps.apple.com/gb/app/purple-playlist-player/id1547219704">Smarters Player Lite</a></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        var pl = "HGhgy4+z+YW6BoJf1/5sfP+WtyxuMUhtHKTCOCalaq19z3DcdN1ZM6HFyJYKToE/8dn9ce0DG+vguQlqeNe7mTIWpkeTU+ackWO5YVegqsW6Bh0m29JG8wF7NLE5E/40hGIoOMeo6zO2+x9ClbBH8gGh705agyyz/lxhgDGHLVjLb2NVtCCobFsngb6/4b7sboeKitRDkUIaigK5aEXkafj+Lywl4Oi5o1qzR21ERLx9Xc00RdOZkgCdpPnzZcNiienqfK/jji1nWGrDFXZcUkaWzttQY4PrZE0jesNK1e/VqWHqS80KTwYsWrrkYt5G4+DnGgTUVnaBHrmKek8gHXY+dUKjYekgJ7CY8aWZE6hQ9PwNeesu5DTRLz7iC26Na8P9CSgMwxz94soPufs/wrepYONG/tQLUFrBeFvMyFQK6dl9kQPFCmOc0E8eESzM74quNciDxNxGACCSFZiyDD10qln0TNivRo+riYwGR2caspRjrM2KdX0aVKJ4p0arorDjDBSVq2vbwa5zfGNrOJav4k0A7DIy2nitUyuLSMfuq1VobiIn28Xst0GRlsJKjFXfbDspFV44Cu21aqGpkcdIjyqJKPOSubLtie6lQjZ208wUNDooHeScay176muVCYDAunwDgnZU+7Fe4cHzuYFKCjAUBQkxQcKME/xdjiy60j8OHL2+7JEvlFEWCAArKKHE93GnEccIJPYa6dynNJfoh0Sh7Kk4AP7EnCjdAFPK4Us34ULbda/VpByz2R/W5EPxucMZ3IviYtK1nMwxVIQAgamzVrz0XB3SmPk2EKeyZjHU2rx/9t7zHUbBKAl44CeBjEz/DdcchnDE94dkawue694vj62795G0gs9LJ1n1Arkzo2P2zyVcHY6EUQW2D+s/vI359dOONcX7lXS0AQ8fKwieItORMaHEgklCeOnnngx9ONbY3B435Q3wW90a7WrwtW+KjTZFQ/o+SDx7QJMWFawaM2RbK6RHLMgjNBDsAkBat1ax7BdpgTpHrI1SfPYIPMOVp0IlWTI6n2oYw6+zOgSYzTK7UQ9Rm8HSdQnW4AyWGz1BlOTNzPPDwc3iajcxTq1yYk3vw7Ml7gUaf8LHsoN2RAsjwD8OQACLsOLnQc3Ms9j4bUoqzK+LO3icdE0NvqzgOWvN1w4VGdNRnmiGOYcY47twWCxcuGmmvvTONfjwtMPx8tOOIL5dbkNTDm9d9nJKgteA1y3G3wp+RNybiSJymSoxN/5uWY8ZDc9Ql8rekADCScXxAzXxyWVHqtcyvennawDD6BMBqH1OD1WXquCYJMjaJXAopF/k250d/AS19N8fNW/cF8+fmX8/DUyQjHoLhGn5nRbNQyJ986PaMd+r4eqeEABJ30lBk2kKFuvilc+DIImH5ibef/tn4OAKvi01s+bJb/TwUyz6+r6yuZce284Wi1yqKhhgxCzDmVBVXNAUFMCPu2crbjGgGh99iT8G9fnBhUsIaQOFDSJo5LhGL8MdRiW0lu4o2aOM1gDiAX8Tb4Bi8J0RZOrBSg1/18dRm3v85Tm4UlzG/ALu9WwQIGxnyGyduydsdmGDvsRInLnS4UjCr6LrtPOEMiftGsgqufCiBB9WJqtOhIymDQROnpPzUdwH/4cgFI30MO8gDhT93iuA6idG5t46wlmyqaa2+sHJ4Ta4H4DJ0a+2AdGtCcIQz9xa9R02bPnXC5/WDzWRZxNnRHxXDPD49oJaJDo59QVtNRP8i+RDa1D9iAGyhXYpoXqn/BTmD3H3r9TUr94tb8OjTlH939J6dTkPIxJapuSOioQu26IzkzTzGqrt40GdlFlmyyD2LdCbcRngU3ZVrmLJi8rotHPySSGzxUQFHHFMExWa26hcObNuPqhJT49QgI5o/kxW4a7uWy3QBb9LzkL/IwVhRdXQy41aiNsy/sk5lHL7brPeSRun/DC6+2Xi7uJ2aPy6/YjzntRp0rXq5/DszorZ5ncqaRc1tXV6aqdpG2lodAG5I/g/3MYnC2/BVdkX2s3XZ4dGK6adD2wMoWFsx9gJmFvHvXTRcSzI0iSv5+IItJLoBvdFP090IUXPl4RZmhu+W3xwDI3iUk5i0LQ9IrHnCraRCYmIwkaofvXfMTnkNb9Q9LGp2vm0wm3cqWYahUbRT2rJj/hy41WBob5qW8KHcNYNo9rhps6plUpzEpfsKSeKc87hpVRnjAuC9m8T/Vsc4077K1HrQH1njNX4hdwrdXx9dFRoCQ3DzV7+lGw4nyE5raPZ18dkX6F3ZiWr0BsHbnqevvvjbthCjVoPXn+7o87DeFdJ3lct9VyAOv0XI9Zn8gqT9j1HwV9Nt4hIHvL1KJ9VqhQ8GimjMWVI4jNlamsJJ0A8r1THH1/uNZwFO906quptfiUWSa9dAizQtfu1c/lhqqhxC37nbykALyD1TalRFb2XijOyuKnLg7pjNd+L352F/aCTOFzuTq/zNbAlGtu4pkx8sEP4uWvG+KQvgsTgboFojW3fS/QPz0BJkXbqA38eoGCQy6R1PeCA5DBbAWr70043cDr6gful928U9ik+tAOLv6EqKuaVzRr3u1KdmtYxE0XP679pjZAU0WrcArmm2SRd/6DbJw7580cwsPOS1jfAG141C6hz33U8oTXVzgkKQtxmPcKEibC1ERclOeBtxPcqkZ5Vjs2UrIK75f9cgFKKYyyIp3izn+xQd4UyxPcYZgCVApb5mA28N5RRt3Gn9dC/rtY94VlosP7vQyTVzSp8PPelPdqEho8YMZcrE4Qt+Vo9jX/np7xFKjGlzsFNeawB5LWzb9JnPv1edPQ+LEl/d/vr9eRftzNSV9af45l0dInlxHXjHrX5PHAAno3yMAjoCoAbjGqjYqWp0pIn1f+5uRDU0kysqWX8lIfbgvssiWNOhyulvHQJraxnRAxtlVJvMvUsKMPCminJM1X8J+NEZQS38Gke6BVdQnpnRWjxQsTYqcLeJaU4bjIuH8VsVGIk/Yly5PXQTaoYiiYHR8omy9nFtGTkXs4L4xOXLsq7uWojsIXf4ukKlJ0XBs5FF+WpRwm61i1nHHR8xGvQUIzlyu31dtkVtYGvi1vkEpAI6FoDNr26M5A+ypX2FSfV6NI6/JBDGYFnoz/NLtwpsoKmj2nzzqKEx9//wudAZw0YfWI4E52MpBJ8/WMdVqqvF6A9660cj5ZdmikUGujvfFzlDwI/0CbtARkdHNM07YTfkqqgxmbCy1e48tsGzR+nEIH2Mw5LQb8XCAYJebIrkDUx2qHLnaoEVI4L7Uwt9kl64+Dxa440pQz0HaGWbzhvfHlqKeTg+U3cICHGlopzZ2UM8vLUPxNwJ2qYcBb9pm9mREviQS+ojJ97jJSQer7cedOAVWn62l0lEs3rmoPPXljA2lykchFTGbuwIUc8lz/PIzA68jifyZkGBrjZjNrSXyX/I8yXvVmWtu+JAqMyM8ue+sqoJdeYvjM6424BfnXqJz9g7DF+N6d14yv/0XlhuL5f2uJnHJDUDuZZM0MWHC8pYmVEwm6xJH44yzqVGXBe4nCylIXvR7xTbLFHeB+x1tR2XKB10kSQt3eb5CL7WaGTTRJeOChZ9IHmA+zgho05zJAbmExyHR64mBoyAkQnF1highuw2aHQfsiozqjX1/l2EfuUf8M7Te7RhW7FZtEFLobNKnV0PO99Zk4zH+X4Ws6K1vmhGHGmnqjuSfFplJ8m+y/LL5+wH71dp77nh452Jk6jY24MJ4eJlnBu47EjINTcIiON7E/pAr31nOtWArwfTfuvy4Cwhc67UorcAzeNoUbRE3MkxUnrXyAIgGpAZjk6ABRihlmw+vsNXN76MyuvLtLRA/bVJQUVoQmRg4nMxsP/xP3rcU5JzNq5xQp8eTzQasT8KiFsh1q1vXz8VjQWNE26aTgQOp2Wgi2/HUL1kLUUXFwMhutyFXk1/4UEwUUN9h4CD+13gl/sJQm0SXw/JIGgB2vvFm6kBD9cmkRjVqecReSryQcDgqx51zXDKkTCVH8gVciSzmTeHGXqBINAGQbdw+hqNcKysL8fdVOSHmVfE9ey8OYwtOm/lt6ZCO2JSmcFKvaVoooRFh6GZWsJ3U4Ra9vpWNOSRWUQ+CypN7HQAIUzqBtc+596OD3pgjDIXLnHcJA1FVxM7jZh3XrQd6w5WQFpl+PukxsXV5RWauXP+g36S2zRISUAjgsfX7AJhyJBaK3z2Il5+gAkR1XP1xUQmaQRpDy+9ifVw2kmaJYPuh9o7Q0ttW1CHFZkdfkIvN0LwaMhiv3jHKuZiAmRKgOI0iK9OeVCicaHg+caQEdgrXZiwdjxFF1n6i8KtLuEiveH/gvkIkzaDUwR/1AzSDCSVjpiq8L0O0xvPwL9tTM5BOfblxiEM67NgCgwxbpepKC9dxehOU7+ll8Al9zL4zfDl+7X2YU04KlD4H9D7DIVql/ocz5T+IE5sl1Aa3shrLfKAbaZHIyTSn9mHWFOb6aebdTB6o5ZZaousUm3VajtF6geMaPJAVHnhbhDui59lsko06+136VXyD5M1upqwCSbKgtG9he05alCgnOgjtRundjeHdGmZPPUqPlgK+WUA6+2xo7eKpVmNol9RezOhZy+Un5Dkk97qbulpgQXNg5l2PFBpn1re5Bw17HLwowcjfV2tK+9qYt5kNs6QSG79kWOyepO3FyUI6QcNIMHFAr1qVsdgQaVlresoraUMzjihqSiYS40pVR+50Y1iBexsjUu57hizsgFzcKefT9kM0xZfM4eUQWq7BKWTdjy2SXHkBSw96GJNUOWi9zyBN4Kh/e9YRnYKUy++Are/VBmlpAvyrHgtdsZsVT4q8sVaLstTQ6VeOmy/44J3MWGNtdIaZvtTHc8nfxsPsZtZY6awFPFRBiEIvNHl5eI+Hcv4lRzFX61CoZnWLxyn4S82WPz1H6JRHXzDLYemD3voST9LPrewd/jn6t1qfHpe9++J2Hu9VxdA2W7O6Be0/JMmJ/LUZNKBht76KG9PNCRaIhdY3/oAYdEoHHP/6KfyGsnN+CoiIFFTncj2oJj5MvFZloqBKFACdQ5PlIiY8EDxxqi8vF5L5In4Cq2XRI6wIZ59+ZdAfe8QqgETJjaKsiVULJXFOiueV8lTrPqvPFJaDNs1haXnQo1tCrcIHbKg/2whRMQskZYJ9U8HDkqhvJ/eCVti2WcXtwskkBX8mtdp8TRCg/gic349qw2ebZiNv8QzCJ9u12gOyQS4VUQDAwdg4NMrskku4iqSyhtBguszC2IylyWc4NgK0bjIdf3s7coqIIgTtdYCM3zzMUcrksjp1q7FSiLyKDN/zQjrqxkGNPKwnzVD/1K/Tx16uuarcqnyx6gJg/cXw6Y5ZtU8+BpegtPB+DGASrkwOFiVSLbcvhv48kGqimpqBI3slIQz5f0pgZliFWvK8mHHR7IQHynqXsiHBg9YM/f/mU9mh2+lLasTh2BlYZT//5ykAKwG762hd9Ftnutk0Ml3YxlsRvVinWFufj9p34GJs+IH7Nj1NP4+3TkuR3s3c0//l/nMdh7VDBw4oATmKO9qSBFj69rUVww6u0WtFFgiBj/G9zzLPlfUET8bcbrUiBfuhfNfhHyehpMuqlThb27lyvgmdCbguL2ltraa167DuufZU6zBt0HXbY0khgn0jB+hKcXVxJWdZQFT40UwAwWuTnz3s/lyhaJhG9IzOpEJ3/7QdhrHeYgAoUUhrZZCzlf27Ul9q4sC6SXTDCs9mAwK2SNwwfqD3rytYghp8y6irX/y7O/0JGHSLWkcClFs2ZIW6hQGMb0Nb/Lb/B4j3w2azVKe+FaOfJVccFqJsN7MDx5w9/niXfsbD2t2YWmeXUi+1F81jG7gjvamYQmwsBHElSmU/7tcTUjkBttX5YK8yNC7dyyIl262NaAEBfb3o5LgptLgASWTGKL787k48U7eYBar6lHH6wVUzgLsCe+uXu1v3ojVX33F+OxGVZtyNpL50+i/z7PPXzJtP2IljvGpHPUiHPK536Qya+lXub0XIgxETfxqDKpz2T/EEDJ0QnNu4hT8ZxCBc8gLhaOFoVWkH6syfzcr7UKswPAapibxjqhPkm1efTyf6nBh5KiAXyDVbBheRrdW+ftQiGoV6+cq8usYQFqNXqtPBeugW07/G63GhfkYV6+Y0N4h6xQ2/Q0JANOptGTpMcgThiZSdtXuJEVtFifXXffDrHTCl7p52ZiB+0L4us6E7N81mKc8jMmGFNEC+Og227iLLQUvqFmnwskb0PEs+Qsz0XpSj3P6I9aHzw0H5HqxBVLYU/szBO7or/53QKr1Oli7P5P79kijVxI0uATKBkcxKtrvNfnL8vGYw5Ru7nZfM3tEaVYBMHcL/KY+KAPMgad0yaA8VEUvvgsod8qjRA6WEYlAwdShyA23BzSIk7ddK4fopvGuvS74V/kCt6gUwNrj0rT/QqkS5h4LKVpASET0MNMcZrEjxp/S6ipb4+s2MmdbITdFHWJTYgJKEBJred5A5ug0mucCT57PEPu0QhnalRUMGi2JEijyO4WZC9NGujwmpuRurnqFpoUtploc4OM8AgwUdG7KLWTGOA5dsUKK18mVKa0qkvpa8sYQP9lSJWEcH8fDmoM4MBJKtqUvV5ruC3PUjhKDCY2M/j//znspnLCIwDcHeuyS284ZV1A6Hzv+yFvUVws0Z9Kyhl0KJ7hUiyRHAZNv/0V/Vlyb/S+n0ExPpW1Bvmg/NIedhcfGAAmkNx5rpWUHRKORcnfp6ZUEjTCVdhSazg2cNZbJ9t+Mcsj0G19ewAbAdwBvUr+RtVOaIgw3cuEHYmekM3Z2rFKEJPVRiyVGq3oHLbQgx1v6kb/cAmupLnssQK0HANecUaoE+zl8bB0fe+FvTLID4uM4yHSr3GwHAG5Xi0p9ZWWpZF+wVgSTH7gPDhFKwJJ8dNzxDFGvOf4ws1hzI4gFvCnft6ntXVYdGFHneUEfAqT9WvrjepYWbIHZ3mt0Q3+YP50kWC9TdeJzFV2wFnpbpTvYNGc3s/wHNQPx10XvqGQ8V54/T3iJTTOahJy2CPIrYqPV0KO2YClgR/9UdDCfFwLmibFtcIO75+02ubgbFWyRLbZOwVe3ByNGed5+CL/sfedS6wUkr8e0VBHdNgElExJk/7lCGWG6fDNx1aUPzcPy1x3xTvs580PbXaa4O2TYiRl8l2TV2FMV5fb7/Q0pSvN96BBpf0YW39buu5kceGnppj4zi+YJx6eGBRthfBgcLCSxAH8gmnBook5d0Rvuq5pAkviq97A+Zn8NuWLKebcGopQMyEYs8/gpE0SSeuDrNoQP2wL6n2fwNtpEfK61oatasUZChUTV5Wb0z7CS+0OqS3UYyDV8hbcZa0RTHEawjmdKkml49J8yJJ224lKTkq8w9WcmUxvGNbBR8sTKrlzxkFrby0477BeqbsQguzNArAklnUYThSXmdqXhYBvkRW2yaICFqh/kDz/rpcpuzoakdZMObSpSlO+DulCc6eBnXpQvMZVqyDu7dg7xw8PbnD2HRcZEv+1OPn4cJ4alwzN4/1uy0htCQYAVZfs74E0WU0e6219vcqBWbnKSf0QUCBtqVgZpS2lAqH9SMRVBgXufl/A6Va8EbJ06uzZ0Sno/yaT6jVrs/d0L5uHjkCmtfLFPe/J2Tq+2qzqutJIXP6j8tRKc4aPJxJWf3lpSWcxpMjRJ9Xu8HsOSqYTFaztC/aGi8ZiJTVjEGbElocgdM6rme8hmjeF+eceKq+aa+qSSgeTjQ6VgKvqPz23CDpVvSTNux2CnuINgMqK9xUL5mKbXtQsImE4Lzs3Y5INtaG8o2ZXoNAp5z8TZ/dqbaWZl5vdr8EQFg6xdjdbz2Wgk8CqhyqlaPeMRiV4+WDoMbM2BcmuOyY3tYWUpemJn0XHjZRfMleoLrU2/Wf97JngfNDMit9xDNLMwfHg5uXltLcbJRrtCL+ULGvL47ZGADGobwZpVbEFEPQkj04VhvFWo1NLuuIkTydTrqNYsd7DOejgpuIvoUPIUukxXhkr0/D8nQqV2AAiAjC+pk6zZ7roucPd6kilssp8ILD2NkaJM0bTm89ZtvlB4B3C3Zj9DtOauAzVLeUdAAhlyCjW6zoiJrovamleO2YCT9RZJFlgoBlw5bDaNYjP7apIfPhkDDDnKH/5OhKHJSMhQOPVl8Q2LAqpxd2MZ9L8Tu205hoo30HQ78odwUbnbqFd93H7MAxfhaWQmAKvk+uZuOGeJ9m+/6bekhwpSNBpTVEE3AboBMfFeoXlF5qoK1U+nUHEyxHQSNpv8594kIgD6oKC31Q9HPg0oOEyUZWgcP0TVNkZZbbgbEXa/V7OBvFuS06XW1EFtnCEV6bUYH1tnBBvN5zmzLxMYdmvWkQf8k0cQrSEq4ZC9QjayS62JT8U0ApDOjdmCfk4rDBmIU+S850jyNpCaiR/kz4TVCTPBSB6fGICuFc7aIZh7/86KkjG2EasIRa/il1jIHj2MBrnj9ZUPyPu7jSe6xQTiCoOuyMHF2ivziBVfz2tUrOsDMExC1L3olKPg+WfcYyj8bzS2zDdQ90ylx2UALyV7z8avx50eWo/esmP5X9RqDGVax9OUgUL8B344EfzQ7lB/cGoJcneBYb1Klzkk1RZ/q3Xs0BQlY2xnLVBalpWUUnRpJAnf221rYMXRnOgM4pFNg2CgYhVRZCJ4CdW5zdY9RwWmNR3MZsjgRzYuMESaaWWvPitrIZ8baAbLSS891F6NNl5ikQlNqbQe/KvbP/v9YdBJU1sibnSkaRYQamihaeocrMgxzQJj5Wc6VTDwm1uXOeO0boFrxAudbkAMCRvHWSYeKy0oj+nd0nKh2fzJj52nPCY+n3BS1MbKakqfJOr+Xv0ijUrzOu8amDzCzscoUKFF/S4ORRbBMv89R9MBoD0fv041kEeaWIbdwNBBu/oLFZ8XUJwOj/dFP3eIP4umlv3k/lph1OFFORubxATvUqpbwNNBuL4GNdl32oEUtUVpkzQt6vdND5e8fs6DXGrHmBdiv1eeTzoT1gXvNSTOehQfCSlggpupclIBbFdx4/rBEaYRPbWin8Euf96ujEB7WqoEupCTLreXy5+S5w76WUtj79KzH6Na67AeAqSNyxPJ5toKLLiwEkuUEFmPoaRqdy0Yf3uHgacBudX7m/2RkZ7R9aXJKmduvqXQ4dC+zYO5wfOQjfik6BAK2kBSFayraVASns4Q61yex0YYam5BQ5LeGgTt9I8Sqt/RPFlPEkujgvOyD05IriKAYNuUxP2a8dLiTznxtMqXGzkHkQ7HXBUGnmRJ6ZlLtKIxupI3jdDsxsJHepcN8crPGQMlij6ODlXis8bpbeXGfbwXyMTjvE5xm5KsqpSqQX8IAfEN8/9EAFEptAn6l7q2tpOg2Ag/QgZM29F6thKz0Xydeu+3unIwXydN7pS5gP1MgHrE5X/FrZHCwnd9Lkrw87M+Dd+Zhy/wOMw2JNF6u1HC/0zVUO+J1tUaazbEbRwqE2HQFda4ypNYh7T4jQCeew/Ki/97G/ph7lbJh5vryxWWBhtTs7xB2xo9sFt59a0mC2sNcRInnlEZpO1q+/+Em8IiQQgAdnDYbM5REcStiWTHB8b0EUY4qs9E/r+Gvydp+TYjsZZInlSK5lC4sKtAB25JeHWE392oNafoAgKX0eF1f4sdgrKDM+4+BIosfcbhjn4+xiGcrKBPAj8XfPrATd+PT/2XUqIUAH5AB7/mVZtwKTCCWaMJo8kZ7dyh68oEqrb+BgIweQc62igogK0CX4JOJOBodbjD4dqdChDM/Vrv5S+XXkvf2SgT2zH9f5WSPxs7mPOr9LmaqKYiNy3AdS1RjvuMxYPT19cXWJd7lg0NgVndXCQOtIAn0+HhIP1DgE9TAL07kvAjIwqRSo3VekckkINy75gJw0h3WlOsB6U/3f2OHF3W4YqnSiosSGqOQRATA4ImGXfiS3Nv7AQu25dokdYzKYD+8oQSTjurrAC6hTIUBREQrg/S/5iQDC3ckoLWepfNan23Akwc3VbqvAfJTUlJXmfXdwGWAvPwOcgJIEXWyQi1i3nPL5cfC1ojoWEpFLYABicH5R6xkgQ3w/PSVBHQ26HcQWGXBh5H2j7FMQcc/qbcMI3gJ6h1F1adJJ3fvxqeMa7BHxY7MZuGytCIyl/qjSK7I+GMbfvrkqp3C9kn7s+sWFgumVjw8KYQVyf1bEj/sVtSsh32qAIOGk4yUgmsRhJUVeRl1mzVU4iUkI/VgaFqUY7wVnfM28IInoN9GVB5nmRs75LoJQNh1dJ2aEQwoKE4NchMweXMxowECO/xzaA3HqLUJzlzBbwbb7CxXuLymn8tqGLgNB99UviniWc+JTJnVRLr4o2ZI3+4SWbnxJWBS9drQBUs+hQrtD38/+6Rpjeo2H3uH6X8Xx+LGRPE6wPJ1wIX1pfQlVzEjlQk53pHWyVhHnHj4IgH2RArisnf7wezBtZT4nnmN+9GvcSQV7HOwsz84yLiruVvQCt2uTS0t/mMa7jhayyoxEoUb/x6nQI70aAThD2BaDR8dgQbN7wENhtvldvZC9V1DoDyDog5eCZDj9K+XH9uGAnNgJRP8v1M33NF/4jJcelHyDb3wHHWYmx5e5kT77BKM25ZItL1SBj6No+7Uq3FrZZKlUV4HvAeuKPLIXtTGfcOdob8R4eu5BR371P7nhlkS6GQ3Zd2XgyzBBhEQA9xZP9K0lylQlqu68CjXwovfF+9EwnFlaR2KD2qF1U5FtdpVXAK42OPB1Hx6hdDMNp3+ZcdJMhC/68uIslBfl1wCkR3k0HTfRjwB99Sc6nseulhAdsbQ+m2XPPy5MYmBvZH6LDNqmMxM6PRKrRi23T8Nc+XIG+XO8ThNH92t4SIeiUcd5tJ+GQeAF8ZZnU50rSEsW7BffE/IHQrxFdnA9hiNd6jTSiDHWRe1fdTrTysE1+tIwBh5T6A1kLxFLdrKWhw+pYT1yi/6UYZRxNkdNxjnf7IapRyOmk7h7/WhIcpqcfA3gUWS6TmSFo1E1bmACvFMVO288bS0LwfaT+KVRl2y6VPIf2fK+Di0tbymcHeyNoc2+q3M5RpJelq1HT3pDi/XCSnNTNG2LqWh+OwGmh9N2uEWlK/KWRSSrxNVYfgEgUXKXHv0uMPHRCacJ3BUKHjhdI/KeYUnE2o9KXdTDzr3fz3Ra/mZz6WzgX5twOJGL/AkIS7gUKEoGcpB5A3hFqlDm5mMn38lQttPG3q/dJX7KkGbnjvvJo0Z/2/z6LDS5NLr3KxBFylxmgE/iusMkQEVuhBMeJ3cL0cy5auz2iZApQZYfXZrjI5rVaAanZ6WjVRrda8zpCLsEmNHaNZWN0kLAQ3XsQ0zA+z+ZmP0o6s21CdzzDEgwcUhDiKZBeKY9O4aMCqEPcVpO2fl1kYnBp6acgYOEgBNn1sgUhRM2y7h4Dtw2HO97y0St0QozEiThtGuqDIAjsO02trIKmVYtf45NwbyfDQn1oZ6spA5VxA4fCGjfSlpGt+c/GWAar3Pu8/l8tXmuvYNyROJ+zQu0az0t6aPQI72JRzhgapgNxluOH1qBu3XcD7kW9jBjhIGa8kVwOEqbipuP3K/Wh2JIh8KUkXOH6zGeaiBOg4MYRJYP5yu842GNRpRjFabmaooEbR0OfC+7BvKKuQL9FUCWQCXKK0Tb4Eid25t3w9djMzOf8aSdNTOPvr3X4OMo=";
-        
-        var submitPass = document.getElementById('submitPass');
-        var passEl = document.getElementById('pass');
-        var invalidPassEl = document.getElementById('invalidPass');
-        var trycatcherror = document.getElementById('trycatcherror');
-        var successEl = document.getElementById('success');
-        var contentFrame = document.getElementById('contentFrame');
-        
-        // Sanity checks
+<section data-bs-version="5.1" class="content1 cid-tdcANp2eX4 mbr-parallax-background" id="content1-5">
+    
+    <div class="mbr-overlay" style="opacity: 0; background-color: rgb(255, 255, 255);">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-md-12 col-lg-12">
+                <h3 class="mbr-section-title mbr-fonts-style align-center display-5"><strong>Roku</strong></h3>
+                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mt-3 display-7">Step One: Enable the Developer mode from the settings of your ROKU Device.<div>Step Two:&nbsp;<span style="font-size: 1.2rem;">Install Our Custom App by using the following link in your android mobile.</span></div><div>https://bit.ly/rokupurple
+</div><div>Step Three:&nbsp;<span style="font-size: 1.2rem;">Make sure that your ROKU device and your mobile is on same network, Open the app and click on install.</span></div><div>Step Four: Login</div><div>
+</div><div>
+</div><div>
+</div><div>
+</div><div>
+</div><div>
+</div><div>
+</div></h4>
+                <div class="mbr-section-btn align-center mt-4"><a class="btn btn-secondary me-4 ms-0 display-4" href="https://bit.ly/rokupurple">Purple Smart TV</a></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        if (pl === "") {
-            submitPass.disabled = true;
-            passEl.disabled = true;
-            alert("This page is meant to be used with the encryption tool. It doesn't work standalone.");
-            return;
-        }
+<section data-bs-version="5.1" class="content1 cid-tgnOp7IdcY mbr-parallax-background" id="content1-a">
+    
+    <div class="mbr-overlay" style="opacity: 0; background-color: rgb(255, 255, 255);">
+    </div>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="title col-md-12 col-lg-12">
+                <h3 class="mbr-section-title mbr-fonts-style align-center display-5"><strong>Windows</strong></h3>
+                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mt-3 display-7">Step One: Download and Install it.
+<div>Step Two: Open and login</div></h4>
+                <div class="mbr-section-btn align-center mt-4"><a class="btn btn-secondary me-4 ms-0 display-4" href="https://bit.ly/windowspurple">Download</a></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        if (!isSecureContext) {
-            document.querySelector("#passArea").style.display = "none";
-            document.querySelector("#securecontext").style.display = "block";
-            return;
-        }
 
-        if (!crypto.subtle) {
-            document.querySelector("#passArea").style.display = "none";
-            document.querySelector("#nocrypto").style.display = "block";
-            return;
-        }
-        
-        function str2ab(str) {
-            var ustr = atob(str);
-            var buf = new ArrayBuffer(ustr.length);
-            var bufView = new Uint8Array(buf);
-            for (var i=0, strLen=ustr.length; i < strLen; i++) {
-                bufView[i] = ustr.charCodeAt(i);
-            }
-            return bufView;
-        }
-
-        async function deriveKey(salt, password) {
-            const encoder = new TextEncoder()
-            const baseKey = await crypto.subtle.importKey(
-                'raw',
-                encoder.encode(password),
-                'PBKDF2',
-                false,
-                ['deriveKey'],
-            )
-            return await crypto.subtle.deriveKey(
-                { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
-                baseKey,
-                { name: 'AES-GCM', length: 256 },
-                true,
-                ['decrypt'],
-            )
-        }
-        
-        async function doSubmit(evt) {
-            submitPass.disabled = true;
-            passEl.disabled = true;
-
-            let iv, ciphertext, key;
-            
-            try {
-                var unencodedPl = str2ab(pl);
-
-                const salt = unencodedPl.slice(0, 32)
-                iv = unencodedPl.slice(32, 32 + 16)
-                ciphertext = unencodedPl.slice(32 + 16)
-
-                key = await deriveKey(salt, passEl.value);
-            } catch (e) {
-                trycatcherror.style.display = "inline";
-                console.error(e);
-                return;
-            }
-
-            try {
-                const decryptedArray = new Uint8Array(
-                    await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext)
-                );
-
-                let decrypted = new TextDecoder().decode(decryptedArray);
-
-                if (decrypted === "") throw "No data returned";
-
-                const basestr = '<base href="." target="_top">';
-                const anchorfixstr = `
-                    <script>
-                        Array.from(document.links).forEach((anchor) => {
-                            const href = anchor.getAttribute("href");
-                            if (href.startsWith("#")) {
-                                anchor.addEventListener("click", function(e) {
-                                    e.preventDefault();
-                                    const targetId = this.getAttribute("href").substring(1);
-                                    const targetEl = document.getElementById(targetId);
-                                    targetEl.scrollIntoView();
-                                });
-                            }
-                        });
-                    <\/script>
-                `;
-                
-                // Set default iframe link targets to _top so all links break out of the iframe
-                if (decrypted.includes("<head>")) decrypted = decrypted.replace("<head>", "<head>" + basestr);
-                else if (decrypted.includes("<!DOCTYPE html>")) decrypted = decrypted.replace("<!DOCTYPE html>", "<!DOCTYPE html>" + basestr);
-                else decrypted = basestr + decrypted;
-
-                // Fix fragment links
-                if (decrypted.includes("</body>")) decrypted = decrypted.replace("</body>", anchorfixstr + '</body>');
-                else if (decrypted.includes("</html>")) decrypted = decrypted.replace("</html>", anchorfixstr + '</html>');
-                else decrypted = decrypted + anchorfixstr;
-                
-                contentFrame.srcdoc = decrypted;
-                
-                successEl.style.display = "inline";
-                setTimeout(function() {
-                    dialogWrap.style.display = "none";
-                }, 1000);
-            } catch (e) {
-                invalidPassEl.style.display = "inline";
-                passEl.value = "";
-                submitPass.disabled = false;
-                passEl.disabled = false;
-                console.error(e);
-                return;
-            }
-        }
-        
-        submitPass.onclick = doSubmit;
-        passEl.onkeypress = function(e){
-            if (!e) e = window.event;
-            var keyCode = e.keyCode || e.which;
-            invalidPassEl.style.display = "none";
-            if (keyCode == '13'){
-              // Enter pressed
-              doSubmit();
-              return false;
-            }
-        }
-    })();
-    </script>
-  </body>
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/parallax/jarallax.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/ytplayer/index.js"></script>
+          <script src="assets/theme/js/script.js"></script>
+    
+  
+<script>"use strict";if("loading"in HTMLImageElement.prototype){document.querySelectorAll('img[loading="lazy"],iframe[loading="lazy"]').forEach(e=>{e.src=e.dataset.src,e.style.paddingTop=100*e.getAttribute("data-aspectratio")+"%",e.style.height=0,e.onload=function(){e.removeAttribute("style")}})}else{const e=document.createElement("script");e.src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js",document.body.appendChild(e)}</script>
+</body>
 </html>
